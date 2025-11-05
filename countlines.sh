@@ -1,2 +1,1 @@
-lines=$( cat $1 | wc -l )
-if [[ $lines -eq 0 ]]; then echo $1 has zero lines; elif [[ $lines -eq 1 ]]; then echo $1 has one line; else echo $1 has $lines lines; fi 
+for file in $@; do lines=$( cat $file | wc -l ); if [[ $lines -eq 0 ]]; then echo $file has zero lines; elif [[ $lines -eq 1 ]]; then echo $file has one line; else echo $file has $lines lines; fi; done
